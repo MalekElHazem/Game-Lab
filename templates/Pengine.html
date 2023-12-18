@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="../static/index.css">
+  <script defer src="../static/layout.js"></script>
+  <title>Games</title>
+{% endblock %}
+
+{% block main %}
+
+<form action="/Pengine" method="post" class="form">
+
+<div class="container5">
+    <div id="mainr">
+        <div class="card9">
+            <div class="card10">
+                <h1>Games</h1>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div id="content1">
+        <div class="card11">
+            <div class="card22">
+                <h1>Select Genres</h1>
+                <div class="customCheckBoxHolder">
+                    {% for genre, index in genres_dict.items() %}
+                    <input class="customCheckBoxInput" id="genre{{ index }}" type="checkbox" name="genres" value="{{ genre }}">
+                    <label class="customCheckBoxWrapper" for="genre{{ index }}">
+                        <div class="customCheckBox">
+                            <div class="inner">{{ genre }}</div>
+                        </div>
+                    </label>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="content2">
+        <div class="card55">
+            <div class="card66">
+                <h1>Select Tags</h1>
+                <div class="customCheckBoxHolder">
+                    {% for tags, index in TAGS_dict.items() %}
+                    <input class="customCheckBoxInput" id="tags{{ index }}" type="checkbox" name="tags" value="{{ tags }}">
+                    <label class="customCheckBoxWrapper" for="tags{{ index }}">
+                        <div class="customCheckBox">
+                            <div class="inner">{{ tags }}</div>
+                        </div>
+                    </label>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footerq">
+        <div class="card77">
+            <div class="card88">
+                <div class="button-container1">
+                <button data-text="Awesome" class="button" type="submit">
+                    <span class="actual-text">&nbsp;Search&nbsp;</span>
+                    <span class="hover-text" aria-hidden="true">&nbsp;Search&nbsp;</span>
+                </button>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+</form> 
+{% endblock %}

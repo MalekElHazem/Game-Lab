@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+
+{% block head %}
+  <link rel="stylesheet" href="../static/index.css">
+  <script defer src="../static/layout.js"></script>
+  <title>Recommendation</title>
+{% endblock %}
+{% block main %}
+<header>
+    <h1 class="cd">Recommendation</h1>
+    <div class="explain">
+        <p>Here are some games you might like<br>
+            they are chosen based on your liked games<br>
+            click on this button if you want to expand your liked games<br>
+        </p>
+        
+    </div>
+
+    <div class="button-container">
+        <a href="/Pengine" style="text-decoration:none">
+        <button class="buttonf">
+            Games
+
+        </button>
+        </a>
+    </div>
+    
+</header>
+<div class="game-container">
+        {% for game in recommendations %}
+            <div class="card20">
+                <div class="card20-image"><img src="{{ game.background_image }}" alt="{{ game.name }}" width="290px" class="im"></div>
+                <p class="card20-title">{{ game.name }}</p>
+                
+                <p class="card20-body">
+                   Rating: {{ game.rating }}
+                </p>
+                <p class="footer1"><span class="by-name"></span><span class="date">Release Date: {{ game.released }}</span></p>
+            </div>
+        {% endfor %}
+</div>
+
+
+
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block head %}
+
+<title>Free-to-play</title>
+    
+{% endblock %}
+{% block main %}
+
+    <h1 class="cd">Free-to-Play Games</h1>
+
+<div class="game-container">
+    
+        
+            {% if title %}
+            {% for i in range(title|length) %}
+            <div class="card20">
+                <div class="card20-image"><img src="{{ image[i] }}" alt="" width="290px" class="im"></div>
+                <p class="card20-title">{{ title[i] }}</p>
+                
+                <p class="card20-body">
+                    {{ info[i] }}
+                </p>
+                <p class="footer1"><span class="by-name"></span><span class="date">Release Date: {{ date[i] }}</span></p>
+                <a class = "footer2" href="{{ game_url[i] }}" target="_blank">Learn More</a>
+            </div>
+                {% endfor %}
+            {% else %}
+                    <p class="no-games-message">No games found for the selected genre.</p>
+            {% endif %}
+        </div>
+</div>
+
+{% endblock %}

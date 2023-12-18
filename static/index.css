@@ -1,0 +1,1187 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+body {
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(../static/photos/stripes.png);
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  /*background-color: #131316;*/
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+@media(max-width: 991px){
+    .sidebar {
+        background-color: rgba(225, 225, 225, 0.15);
+        backdrop-filter: blur(10px);
+    }
+}
+
+
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This ensures the container takes at least the full viewport height */
+}
+
+
+main {
+  flex: 1;
+  margin-bottom: auto; 
+}
+
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+
+
+
+
+
+.cd{
+  color: #8BE8E5;
+}
+  
+
+section{
+    display: inline-block;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0);
+    transition: all 1s;
+}
+
+
+.col-sm-9 {
+    width: 100%;
+    margin: 0;
+    padding: 5%;
+    
+}
+.col-sm-6
+{
+    padding: 1%;
+}
+
+.txt
+{
+    padding-top: 70px;
+}
+
+.img {
+    border-radius: 10px;
+}
+
+.row {
+    width: 100%;
+}
+.container {
+    color: #ffffff;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+
+
+
+
+#butt{
+    width: 165px;
+    height: 62px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 1rem;
+    border: none;
+    position: relative;
+    background: #100720;
+    transition: 0.1s;
+  }
+  
+  #butt::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+    filter: blur(15px);
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  #butt:active {
+    transform: scale(0.9) rotate(3deg);
+    background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+    transition: 0.5s;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45%;
+  }
+
+
+  
+
+  /*checkbox*/
+  .customCheckBoxHolder {
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to create multiple rows */
+    justify-content: center; /* Center the checkboxes evenly */
+}
+
+/* Adjust the width of each checkbox column */
+.customCheckBoxInput {
+    width: calc(10% - 10px); /* Subtracting margin */
+    margin: 5px;
+}
+
+  
+  .customCheckBox {
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    padding: 2px 8px;
+    background-color: rgba(0, 0, 0, 0.16);
+    border-radius: 0px;
+    color: rgba(255, 255, 255, 0.7);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 300ms;
+    transition-property: color, background-color, box-shadow;
+    display: flex;
+    height: 32px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px 1px 1px 0px;
+    outline: none;
+    justify-content: center;
+    min-width: 55px;
+  }
+  
+  .customCheckBox:hover {
+    background-color: #2c2c2c;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
+  }
+  
+  .customCheckBox .inner {
+    font-size: 18px;
+    font-weight: 900;
+    pointer-events: none;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 300ms;
+    transition-property: transform;
+    transform: translateY(0px);
+  }
+  
+  .customCheckBox:hover .inner {
+    transform: translateY(-2px);
+  }
+  
+  .customCheckBoxWrapper:first-of-type .customCheckBox {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-right: 0px;
+  }
+  
+  .customCheckBoxWrapper:last-of-type .customCheckBox {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 0px;
+  }
+  
+  .customCheckBoxInput {
+    display: none;
+  }
+  
+  .customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox {
+    background-color: rgb(0, 200, 255);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
+  }
+  
+  .customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox .inner {
+    transform: translateY(-2px);
+  }
+  
+  .customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox:hover {
+    background-color: #6f00ff;
+    box-shadow: rgba(0, 0, 0, 0.26) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.15) 0px 3px 6px 2px;
+  }
+  
+  .customCheckBoxWrapper .customCheckBox:hover .inner {
+    transform: translateY(-2px);
+  }
+
+
+
+
+
+
+
+  .form{
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+h1{
+    font-weight: 600;
+    color: #8BE8E5;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.card1 {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+ }
+ 
+ .card2 {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  transition: all .2s;
+  padding-top: 20px;
+ }
+ 
+ .card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+ }
+ 
+ .card1:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+ }
+  
+
+
+
+
+
+ .card3 {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+ }
+ 
+ .card4 {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  transition: all .2s;
+  padding-top: 20px;
+}
+
+ 
+ .card4:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+ }
+ 
+ .card3:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+ }
+  
+
+
+ .card5 {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+ }
+ 
+ .card6 {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  transition: all .2s;
+  padding-top: 20px;
+}
+
+ 
+ .card6:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+ }
+ 
+ .card5:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+ }
+
+
+
+
+ .card7 {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+ }
+ 
+ .card8 {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  transition: all .2s;
+  padding-top: 20px;
+}
+
+ 
+ .card8:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+ }
+ 
+ .card7:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+ }
+
+
+
+
+ 
+ .card9 {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+ }
+ 
+ .card10 {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  transition: all .2s;
+  padding-top: 20px;
+}
+
+ 
+ .card10:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+ }
+ 
+ .card9:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .card11 {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+ }
+ 
+ .card22 {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  transition: all .2s;
+  padding-top: 20px;
+ }
+ 
+ .card22:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+ }
+ 
+ .card11:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+ }
+  
+
+
+
+
+
+
+ .card55 {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+ }
+ 
+ .card66 {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  transition: all .2s;
+  padding-top: 20px;
+}
+
+ 
+ .card66:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+ }
+ 
+ .card55:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+ }
+
+
+
+
+ .card77 {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+
+ }
+ 
+ .card88 {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  transition: all .2s;
+  padding-top: 20px;
+}
+
+ 
+ .card88:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+ }
+ 
+ .card77:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .radio-buttons {
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+  
+  .radio-button {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding-left: 110px;
+  }
+  
+  .radio-button input[type="radio"] {
+    display: none;
+  }
+  
+  .radio-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #aaa;
+    position: relative;
+    margin-right: 10px;
+  }
+  
+  .radio-circle::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(0, 200, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .radio-button input[type="radio"]:checked + .radio-circle::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .radio-button:nth-of-type(1) input[type="radio"]:checked + .radio-circle::before {
+    background-color: rgb(0, 200, 255);
+  }
+  
+  .radio-button:nth-of-type(2) input[type="radio"]:checked + .radio-circle::before {
+    background-color: rgb(0, 200, 255);
+  }
+  
+  .radio-button:nth-of-type(3) input[type="radio"]:checked + .radio-circle::before {
+    background-color: rgb(0, 200, 255);
+  }
+  
+  .radio-label {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .radio-button:hover .radio-circle { 
+    border-color: #555;
+  }
+  
+  .radio-button:hover input[type="radio"]:checked + .radio-circle::before {
+    background-color: #555;
+  }
+  
+
+
+
+  .input {
+    background-color: #212121;
+    max-width: 190px;
+    height: 40px;
+    padding: 10px;
+    /* text-align: center; */
+    border: 2px solid white;
+    border-radius: 5px;
+    /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
+  }
+  
+  .input:focus {
+    color: rgb(0, 255, 255);
+    background-color: #212121;
+    outline-color: rgb(0, 255, 255);
+    box-shadow: -3px -3px 15px rgb(0, 255, 255);
+    transition: .1s;
+    transition-property: box-shadow;
+  }
+
+
+
+
+
+
+
+
+
+  .button-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+  }
+
+
+  /* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37C4FF;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 1.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.game-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
+  align-items: center;
+
+
+}
+.card20 {
+  padding: 20px;
+  width: 330px;
+  min-height: 370px;
+  border-radius: 20px;
+  background: #212121;
+  box-shadow: 5px 5px 8px #1b1b1b,
+             -5px -5px 8px #272727;
+  transition: 0.4s;
+  
+}
+
+.card20:hover {
+  translate: 0 -10px;
+}
+
+.card20-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #b2eccf;
+  margin: 15px 0 0 10px;
+}
+
+.card20-image {
+  background-color: #313131;
+  border-radius: 15px;
+  background: #313131;
+  box-shadow: inset 5px 5px 3px #2f2f2f,
+            inset -5px -5px 3px #333333;
+  
+  
+}
+
+.card20-body {
+  margin: 13px 0 0 10px;
+  color: rgb(255, 249, 249);
+  font-size: 15px;
+}
+
+.footer1 {
+  float: right;
+  margin: 28px 10px 0 18px;
+  font-size: 13px;
+  color: #b3b3b3;
+  
+}
+.footer2 {
+  float: left;
+  margin: 28px 10px 0 18px; /* Adjust the margin as needed */
+  font-size: 13px;
+  color: #b3b3b3;
+}
+
+.by-name {
+  font-weight: 700;
+}
+
+
+
+.im{
+  border-radius: 10px;
+  height: 163px;
+}
+
+
+
+
+
+
+
+.btn {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(14, 14, 26);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #1f4c65;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+.btn:active {
+  scale: 0.92;
+}
+
+.btn:hover {
+  background: rgb(2,29,78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+/* text */
+.text {
+  text-decoration: none;
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px ,2px);
+}
+
+
+
+
+
+
+
+
+
+
+.fa-heart-o {
+  color: red;
+  cursor: pointer;
+}
+
+.fa-heart {
+  color: red;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container10 {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: 0.2fr 0.5fr 0.2fr;
+  grid-template-areas:
+    " main10 main10 main10"
+    " content10 content20 content30"
+    " content10 footer10 footer10";
+  grid-gap: 0.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #004d40;
+  text-align: center;
+}
+
+
+#main10 {
+  grid-area: main10;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content10 {
+  grid-area: content10;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content20 {
+  grid-area: content20;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content30 {
+  grid-area: content30;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#footer10 {
+  grid-area: footer10;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+
+@media only screen and (max-width: 550px) {
+  .container10 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    grid-template-areas:
+      "main10"
+      "content10"
+      "content20"
+      "content30"
+      "footer10";
+  }
+}
+
+
+
+
+
+
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+}
+
+
+
+.container5 {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.2fr 0.5fr 0.2fr;
+  grid-template-areas:
+    " mainr mainr "
+    " content1 content2 "
+    " footerq footerq ";
+  grid-gap: 0.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #004d40;
+  text-align: center;
+}
+
+
+#mainr {
+  grid-area: mainr;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content1 { 
+  grid-area: content1;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content2 {
+  grid-area: content2;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+
+#footerq {
+  grid-area: footerq;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+
+@media only screen and (max-width: 550px) {
+  .container5 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1.2fr 1.2fr 0.4fr;
+    grid-template-areas:
+      "mainr"
+      "content1"
+      "content2"
+      "footerq";
+  }
+}
+
+
+
+
+
+
+.explain
+{
+  color: #ffffff;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+}
+
+
+
+.buttonf {
+  --glow-color: rgb(176, 243, 255);
+  --glow-spread-color: rgba(123, 235, 255, 0.781);
+  --enhanced-glow-color: rgb(206, 241, 255);
+  --btn-color: rgb(61, 81, 136);
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 1em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+  
+
+ }
+ 
+ .buttonf::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  filter: blur(2em);
+  opacity: .7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+ }
+ 
+ .buttonf:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 2em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+ }
+ 
+ .buttonf:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+         0 0 2.5em 2em var(--glow-spread-color),
+         inset 0 0 .5em .25em var(--glow-color);
+ }
+
+
+
+
+
+
+
+
+
+
+ buttonrr {
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+buttonrr:focus,
+buttonrr:hover {
+  color: #fff;
+}
+
+buttonrr:focus:after,
+buttonrr:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+buttonrr:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(0, 200, 255);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+

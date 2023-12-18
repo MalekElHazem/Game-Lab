@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+
+
+{% block head %}
+  <link rel="stylesheet" href="../static/index.css">
+  <script defer src="../static/layout.js"></script>
+  <title>Free-to-play</title>
+{% endblock %}
+
+
+{% block main %}
+
+
+<form action="/ftpEngine" method="post" class="form">
+<div class="container10">
+    <div id="main10">
+        <div class="card9">
+            <div class="card10">
+                <h1>Free to play games</h1>
+            </div>
+        </div>
+    </div>
+    <div id="content10">
+        <div class="card1">
+            <div class="card2">
+                <h1>Select Genres</h1>
+                <div class="customCheckBoxHolder">
+                    {% for genre, index in genres_dict.items() %}
+                    <input class="customCheckBoxInput" id="genre{{ index }}" type="checkbox" name="genres" value="{{ genre }}">
+                    <label class="customCheckBoxWrapper" for="genre{{ index }}">
+                        <div class="customCheckBox">
+                            <div class="inner">{{ genre }}</div>
+                        </div>
+                    </label>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content20">
+        <div class="card3">
+            <div class="card4">
+                    <h1>Platform</h1>
+                    <div class="radio-buttons">
+                        <label class="radio-button">
+                        <input type="radio" name="plat" value="all" checked>
+                        <div class="radio-circle"></div>
+                        <span class="radio-label">All</span>
+                        </label>
+                        <label class="radio-button">
+                        <input type="radio" name="plat" value="pc">
+                        <div class="radio-circle"></div>
+                        <span class="radio-label">PC</span>
+                        </label>
+                        <label class="radio-button">
+                        <input type="radio" name="plat" value="browser">
+                        <div class="radio-circle"></div>
+                        <span class="radio-label">Browser</span>
+                        </label>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div id="content30">
+        <div class="card5">
+            <div class="card6">
+                    <h1>Sort</h1>
+                    <div class="radio-buttons">
+                        <label class="radio-button">
+                        <input type="radio" name="sort" value="release-date">
+                        <div class="radio-circle"></div>
+                        <span class="radio-label">Release Date</span>
+                        </label>
+                        <label class="radio-button">
+                        <input type="radio" name="sort" value="popularity" checked>
+                        <div class="radio-circle"></div>
+                        <span class="radio-label">Popularity</span>
+                        </label>
+                        <label class="radio-button">
+                        <input type="radio" name="sort" value="alphabetical">
+                        <div class="radio-circle"></div>
+                        <span class="radio-label">Alphabetical</span>
+                        </label>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer10">
+        <div class="card7">
+            <div class="card8">
+                <div class="button-container1">
+                <button data-text="Awesome" class="button" type="submit">
+                    <span class="actual-text">&nbsp;Search&nbsp;</span>
+                    <span class="hover-text" aria-hidden="true">&nbsp;Search&nbsp;</span>
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</form>
+{% endblock %}
