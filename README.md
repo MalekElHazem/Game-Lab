@@ -1,6 +1,7 @@
 # Game-Lab
 
 Description:
+
 -Game Lab is a web application that allow you to search Free to Play and paid games ,also it recommended to you Games based on your preference.
 
 -To access the site you need to make an account first: you can sign up and login.
