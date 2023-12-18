@@ -1,5 +1,5 @@
 # Game-Lab
-Flask Project
+
 Description:
 -Game Lab is a web application that allow you to search Free to Play and paid games ,also it recommended to you Games based on your preference.
 
